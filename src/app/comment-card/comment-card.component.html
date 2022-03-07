@@ -1,0 +1,16 @@
+<div class="card p-2 rounded" (click)="toggleReplies()" [ngClass]="replies ? 'commentShadow' : 'card p-2 rounded'">
+    <div class="container">
+        <div class="row">
+            <span>{{commentBody + ' ' }} <b>~{{author}}</b></span>
+        </div>
+    </div>
+</div>
+<div *ngIf="displayReplies" class="row m-3 p-2 w-50 replies rounded">
+    <div *ngFor="let reply of replies.data.children" class="card p-2 mb-1 ml-5">
+        <div class="container">
+            <div class="row">
+                <span>{{reply.data.body + ' ' }} <b>~{{reply.data.author}}</b></span>
+            </div>
+        </div>
+    </div>
+</div>

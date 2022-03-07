@@ -1,0 +1,30 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" class="pt-5"> Loading... </p></ngx-spinner>
+<div *ngIf="!showComments; else comments">
+    <h1 class="mx-5 mt-5 pb-3 mb-5 border-bottom">Listings for r/battlestations</h1>
+    <div *ngFor="let listing of listings | paginate
+    : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };
+    let i = index" 
+    class="listing mx-5 mb-3 rounded" role="button" (click)="handleListingClick($event, listing.data.id, listing.data.title)">
+        <app-listing-card 
+            [title]="listing.data.title" 
+            [body]="listing.data.selftext" 
+            [thumbnailUrl]="listing.data.thumbnail"
+            [fullImageUrl]="listing.data.url">
+        </app-listing-card>
+    </div>
+    <pagination-controls
+      *ngIf="!loading"
+      previousLabel="Back"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+</div>
+<ng-template #comments>
+    <button type="button" class="btn-sm btn-primary mx-5 mt-5 mb-2" (click)="handleBackClick()">Back to listings</button>
+    <app-comments *ngIf="showComments" [listingId]="listingId" [listingTitle]="listingTitle"></app-comments>
+</ng-template>

@@ -1,0 +1,9 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "large" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" class="pt-5"> Loading... </p></ngx-spinner>
+<div>
+    <h1 class="mx-5 mt-3 pb-3 mb-3 border-bottom">{{listingTitle}}</h1>
+    <div class="mx-5 mb-3">
+        <div *ngFor="let comment of comments" class="mb-1">
+            <app-comment-card [commentBody]="comment.body" [author]="comment.author" [replies]="comment.replies"></app-comment-card>
+        </div>
+    </div>
+</div>
