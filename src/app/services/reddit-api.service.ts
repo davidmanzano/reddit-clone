@@ -13,8 +13,8 @@ import {
 @Injectable()
 export class RedditApiService {
   private subreddit = "r/battlestations"
-  private redditInfoUrl = "http://www.reddit.com/" + this.subreddit + "/hot.json?limit=100";
-  private subredditCommentsUrl = "http://www.reddit.com/" + this.subreddit + "/comments/";
+  private redditInfoUrl = "https://www.reddit.com/" + this.subreddit + "/hot.json?limit=100";
+  private subredditCommentsUrl = "https://www.reddit.com/" + this.subreddit + "/comments/";
 
 
   constructor(private http: HttpClient, router: Router) {}
