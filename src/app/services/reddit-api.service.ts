@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { TenantDetails } from 'app/models/tenantDetails.model';
 import { Router } from '@angular/router';
 
 import {

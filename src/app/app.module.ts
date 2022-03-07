@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CommentsComponent } from './comments/comments.component';
 import { RedditApiService } from './services/reddit-api.service';
-import { HttpClient, HttpHandler } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ListingCardComponent } from './listing-card/listing-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -33,7 +32,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     RouterModule.forChild([
         {path: '', component: HomepageComponent},
-        // {path: 'comments', component: CommentsComponent, pathMatch: 'full'},
     ]),
   ],
   exports: [
